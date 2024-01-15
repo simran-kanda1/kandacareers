@@ -1,6 +1,8 @@
 import React from "react";
 import { Box, Grid, Typography, Button, makeStyles } from "@material-ui/core"
-import { differenceInMinutes } from 'date-fns';
+import { differenceInHours, differenceInMinutes } from 'date-fns';
+import { differenceInDays} from 'date-fns';
+import {useState} from "react";
 
 const skills=["Javascript", "React.js", "Node.js", "Angular"]
 
@@ -55,8 +57,21 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default props => {
+export default (props) => {
     const classes= useStyles()
+
+    const [timeString, setTimeString] = useState("")
+
+    const timeFix = () => {
+        if ((differenceInDays(Date.now(), (props.postedOn))) < 1) {
+            return("Just Now")
+        }
+        else{
+            return(`${differenceInDays(Date.now(),props.postedOn)} days ago`)
+        }
+
+    }
+
     return (
         <Box p={2} className={classes.wrapper}>
             <Grid container alignItems="center">
@@ -65,7 +80,7 @@ export default props => {
                     <Typography className={classes.jobType} variant="subtitle2">{props.type}</Typography>
                     <Grid item>
                         <Typography variant ="caption">
-                            {differenceInMinutes(Date.now(),props.postedOn)} min ago | {props.location}
+                            {timeFix()} | {props.location}
                         </Typography>
                     </Grid>
                 </Grid>
