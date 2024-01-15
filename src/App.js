@@ -5,7 +5,7 @@ import SearchBar from "./components/SearchBar";
 import Header from "./components/Header";
 import JobCard from "./components/Job/JobCard";
 import NewJobModal from "./components/Job/NewJobModal";
-import { firestore, app } from './firebase/config';
+import { firestore, app } from './components/firebase/config';
 import { Close as CloseIcon, PinDropSharp } from '@material-ui/icons';
 import ViewJobModal from "./components/Job/ViewJobModal";
 

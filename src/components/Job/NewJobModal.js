@@ -6,7 +6,7 @@ import axios from 'axios';
 import { makeStyles } from '@material-ui/core/styles';
 import { Close as CloseIcon } from '@material-ui/icons';
 import { useState } from 'react';
-import { storage } from '/Users/simrankanda/Desktop/kanda-careers/kanda_careers/src/firebase/config';
+import { storage } from '../firebase/config';
 
 export default (props) => {
 
