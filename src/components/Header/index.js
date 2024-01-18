@@ -24,7 +24,7 @@ return(
         <Grid container justifyContent= "center">
             <Grid item xs={10}> 
                 <Box display="flex" justifyContent= "right" mt={2}>
-                    <a href="https://www.kandaconsulting.net" target='_blank'>
+                    <a href="https://www.kandaconsulting.net" target='_self'>
                     <Button variant= "contained" color="primary" disableElevation className={classes.homeButton}>
                         Back to Home Page
                     </Button>
